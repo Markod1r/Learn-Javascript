@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hitung Karakter</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            background: linear-gradient(270deg, #ff416c, #ff4b2b, #1e90ff, #32cd32);
+            background-size: 300% 300%;
+            animation: gradientMove 8s ease infinite;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        p {
+            font-size: 20px;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
 <body>
-    <script src="js.js"></script>
+    <h2>Live Character Counter</h2>
+    <input type="text" id="inputText" placeholder="Ketik sesuatu..." oninput="hitungKarakter()">
+    <p>Jumlah Karakter: <span id="jumlah">0</span></p>
+
+    <script>
+        function hitungKarakter() {
+            let teks = document.getElementById("inputText").value;
+            document.getElementById("jumlah").innerText = teks.length;
+        }
+        
+    </script>
 </body>
 </html>
